@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,100..900,100;1,9..144,100..900,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..1000;1,200..1000&display=swap');
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f8fc">
+    <title>MyEcho: Caregiver Space</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="top-bar">
+        <a href="index.html" class="logo">💙 MyEcho Caregiver</a>
+        <p class="header-tagline">This is only a prototype. Not for actual use.</p>
+        <a href="index.html" class="view-switch">← Patient View</a>
+    </header>
+
+    <main class="dashboard">
+
+        <!-- da dashboard -->
+        <section class="welcome">
+            <p class="section-label">Mom is doing well today!</p>
+            <h1>Caregiver Dashboard</h1>
+            <h2>Caring For: Margret</h2>
+            <p>Keep familiar routines, trusted contacts and browser notes organized in one place.</p>
+        </section>
+
+        <!-- take a glanceee~~ -->
+        <section class="next-card">
+            <span class="section-label">Status Today</span>
+            <div class="next-content">
+                <span class="big-icon">📊</span>
+                <div>
+                    <h2 id="stat-tasks-heading">0 of 4 tasks completed</h2>
+                    <p>Current progress in the patient's app today.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The routine + checklist -->
+        <section class="placeholder-section">
+            <h2>Today's Routine</h2>
+            <p>Track your patient's daily activities & milestones.</p>
+
+            <div class="task-list" id="caregiver-routine-list">
+                <!-- Populated dynamically by JS -->
+            </div>
+            <p class="contact-note">Task completion status is saved locally in this browser.</p>
+        </section>
+
+        <!-- Prefrences / settings area -->
+        <section class="placeholder-section">
+            <h2>Saved Preferences</h2>
+            <p>Values currently read from the user app's settings.</p>
+
+            <div class="contact-card" style="margin-bottom: 12px;">
+                <div class="contact-avatar">☺</div>
+                <div class="contact-info">
+                    <h3>Preferred Name</h3>
+                    <p id="pref-name-display">Not set yet</p>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-avatar">📍</div>
+                <div class="contact-info">
+                    <h3>Familiar Place</h3>
+                    <p id="pref-place-display">No place saved yet</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Caregiver note -->
+        <section class="placeholder-section">
+            <h2>Doctor / Caregiver Memory Note</h2>
+            <p>Keep a quick, gentle reminder for yourself to address to the patient or doctor later.</p>
+
+            <label for="caregiver-note-title">Note title</label>
+            <div class="settings-row" style="margin-bottom: 12px;">
+                <input type="text" id="caregiver-note-title" placeholder="e.g. Favorite afternoon snacks" maxlength="50">
+            </div>
+
+            <label for="caregiver-note-body">Note details</label>
+            <div class="settings-row">
+                <input type="text" id="caregiver-note-body" placeholder="Write a respectful reminder..." maxlength="200">
+                <button id="save-caregiver-note" class="primary-button" type="button">Save note</button>
+            </div>
+
+            <p id="note-status" aria-live="polite"></p>
+        </section>
+
+        <!-- +task [working prototype] -->
+        <section class="placeholder-section">
+            <h2>Add Patient Reminder</h2>
+            <p>Add a new task directly to the patient's daily checklist.</p>
+
+            <label for="new-task-input">Task description</label>
+            <div class="settings-row">
+                <input type="text" id="new-task-input" placeholder="e.g. Take afternoon medicine" maxlength="50">
+                <button id="add-task-btn" class="primary-button" type="button">Add to Checklist</button>
+            </div>
+            <p id="task-add-status" aria-live="polite"></p>
+        </section>
+
+        <!-- +memory [not truely, just working prototype] -->
+        <section class="placeholder-section">
+            <h2>Add Memory Card</h2>
+            <p>Create a meaningful memory or photo card for the patient's memories screen.</p>
+
+            <label for="memory-title-input">Memory Title / Subtitle</label>
+            <input type="text" id="memory-title-input" placeholder="e.g. Our family trip to Tampa, 2012" maxlength="60" style="width:100%; padding:12px; border-radius:12px; border:1px solid #dfe2f1; margin-bottom:12px;">
+
+            <label for="memory-desc-input">Memory Story / Quote</label>
+            <div class="settings-row">
+                <input type="text" id="memory-desc-input" placeholder="e.g. We watched the sunset at Clearwater beach." maxlength="150">
+                <button id="add-memory-btn" class="primary-button" type="button">Save Memory</button>
+            </div>
+            <p id="memory-add-status" aria-live="polite"></p>
+        </section>
+
+        <!-- safety, location -->
+        <section class="location-card">
+            <h2>📍 Patient Safety & Location</h2>
+            <p>Update the familiar location reminder shown on the patient dashboard.</p>
+
+            <label for="safety-location-input">Current Location / Safe Place</label>
+            <div class="location-row">
+                <input id="safety-location-input" type="text" maxlength="80" placeholder="For example: Home with Sarah on Elm Street">
+                <button id="save-safety-location" class="game-button" type="button">Update Location</button>
+            </div>
+            <p id="safety-status" aria-live="polite">Location sync ready.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>MyEcho 💙</p>
+    </footer>
+
+    <script src="caregiver.js"></script>
+
+</body>
+</html>

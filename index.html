@@ -1,0 +1,501 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,100..900,100;1,9..144,100..900,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..1000;1,200..1000&display=swap');
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f8fc">
+    <title>MyEcho</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="top-bar">
+        <a href="#home" class="logo" data-screen="home">💙 MyEcho</a>
+        <p class="header-tagline">This is only a prototype. Not for actual use.</p>
+        <a href="caregiver.html" class="view-switch">Caregiver View →</a>
+    </header>
+
+    <main class="dashboard">
+
+        <div class="app-screen active" id="screen-home">
+
+            <section class="welcome" id="home">
+                <p class="date" id="current-date"></p>
+                <p class="section-label">What's next?</p>
+                <h1>Good morning, Margret! 👋</h1>
+                <h2>It's lovely to see you.</h2>
+                <p>You're in the right place. Let's take today one step at a time.</p>
+            </section>
+
+            <section class="read-aloud-card">
+                <div>
+                    <span class="big-icon">🔊</span>
+                    <h2>Listen to a reminder</h2>
+                    <p>Would you like to hear a reminder from your caregiver?</p>
+                </div>
+
+                <div class="read-aloud-buttons">
+                    <button id="read-aloud-button" type="button">▶ Read aloud</button>
+                    <button id="stop-reading-button" type="button">■ Stop</button>
+                </div>
+
+                <p id="reading-status" aria-live="polite"></p>
+            </section>
+
+
+            <!-- yayyyy now the next section cuz hemas still weird....jk.... -->
+
+            <section class="next-card">
+                <span class="section-label">A LITTLE GUIDANCE</span>
+
+                <div class="next-content">
+                    <span class="big-icon">☀️</span>
+                    <div>
+                        <h2>What's next?</h2>
+                        <p>Your plans are here whenever you need them.</p>
+                    </div>
+                </div>
+
+                <button class="primary-button" type="button" data-screen="today">
+                    See my day →
+                </button>
+
+
+            </section>
+
+            <!--the contacts heh-->
+
+            <section class="people-section">
+                <div class="section-heading">
+                    <h2>My favorited people</h2>
+                    <button type="button" data-screen="people">See everyone →</button>
+                </div>
+
+                <!--the example people-->
+
+                <div class="people-list">
+                    <button class="person" type="button" data-screen="people">
+                        <span class="avatar">S</span>
+                        <span>Sarah</span>
+                    </button>
+
+                    <button class="person" type="button" data-screen="people">
+                        <span class="avatar">M</span>
+                        <span>Michael</span>
+                    </button>
+
+                    <button class="person more-person" type="button" data-screen="people">
+                        <span class="avatar">+</span>
+                        <span>More</span>
+                    </button>
+                </div>
+            </section>
+
+
+            <!--THE MAIN SECTION!!-->
+
+            <section class="navigation-section">
+                <h2>Where would you like to go?</h2>
+
+                <div class="navigation-grid">
+                    <button class="nav-card" type="button" data-screen="today">
+                        <span class="nav-icon">📅</span>
+                        <span class="nav-title">My Day</span>
+                        <span class="nav-description">Plans + reminders</span>
+                    </button>
+
+                    <button class="nav-card" type="button" data-screen="activities">
+                        <span class="nav-icon">🧩</span>
+                        <span class="nav-title">Activities</span>
+                        <span class="nav-description">Games + fun</span>
+                    </button>
+
+                    <button class="nav-card" type="button" data-screen="memories">
+                        <span class="nav-icon">📸</span>
+                        <span class="nav-title">Memories</span>
+                        <span class="nav-description">People + moments</span>
+                    </button>
+
+                    <button class="nav-card" type="button" data-screen="settings">
+                        <span class="nav-icon">💙</span>
+                        <span class="nav-title">I need help</span>
+                        <span class="nav-description">Help + settings</span>
+                    </button>
+                </div>
+            </section>
+
+            </section>
+            <section class="help-card" id="caregiver">
+                <span class="help-icon">🤝</span>
+                <div>
+                    <h2>Lost?</h2>
+                    <p>Say "Hey Siri" or "Hey Google" and ask to call your caregiver, or call 911.</p>
+                </div>
+                <button id="help-button" type="button">Get help</button>
+            </section>
+
+        </div>
+
+
+        <!-- today SCREEN -->
+
+        <div class="app-screen" id="screen-today" hidden>
+
+            <section class="screen-heading" id="today">
+                <p class="section-label">How are you feeling today?</p>
+                <h1>My Day 📅</h1>
+                <p class="today-date" id="today-date"></p>
+                <p>Here are your plans for today. You can take your time.</p>
+            </section>
+
+            <section class="placeholder-section">
+                <h2>Today's checklist</h2>
+                <p>Check each item when you're finished.</p>
+
+                <div class="task-list">
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <span>Brush your teeth</span>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <span>Eat breakfast</span>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <span>Call your caregiver</span>
+                    </label>
+
+                    <label class="task-item">
+                        <input type="checkbox" class="task-checkbox">
+                        <span>Finish your crossword puzzle</span>
+                    </label>
+                </div>
+
+                <p id="task-progress" aria-live="polite">0 of 4 tasks completed</p>
+            </section>
+            <section class="next-card">
+                <span class="big-icon">🌷</span>
+                <h2>Remember</h2>
+                <p>You don't have to do everything at once. Call your caregiver if you need help.</p>
+            </section>
+            </section>
+            <section class="help-card" id="caregiver">
+                <span class="help-icon">🤝</span>
+                <div>
+                    <h2>Lost?</h2>
+                    <p>Say "Hey Siri" or "Hey Google" and ask to call your caregiver, or call 911.</p>
+                </div>
+                <button id="help-button" type="button">Get help</button>
+            </section>
+
+        </div>
+
+
+
+        <!-- activities SCREEN -->
+
+        <div class="app-screen" id="screen-activities" hidden>
+
+            <section class="screen-heading" id="activities">
+                <p class="section-label">One activity a day keeps your mind active.</p>
+                <h1>Activities 🧩</h1>
+                <p>Choose something you would enjoy. There's no rush and no losing.</p>
+            </section>
+
+            <section class="placeholder-section">
+                <h2>Choose an activity</h2>
+
+                <div class="activity-grid">
+                    <button class="activity-card" id="memory-game-button" type="button">
+                        <span class="activity-icon">🧠</span>
+                        <span class="activity-title">Memory Match</span>
+                        <span class="activity-description">Match the pairs</span>
+                    </button>
+
+                    <button class="activity-card" id="word-game-button" type="button">
+                        <span class="activity-icon">🔤</span>
+                        <span class="activity-title">Odd One Out</span>
+                        <span class="activity-description">Find the item that doesn't belong</span>
+                    </button>
+                </div>
+
+                <div id="memory-game" class="game-panel" hidden>
+                    <h3>Find the matching pairs!</h3>
+                    <p>Choose two cards to find a match.</p>
+                    <div id="memory-board" class="memory-board"></div>
+                    <p id="memory-status" aria-live="polite">Pairs found: 0 of 3</p>
+                    <button id="restart-game" class="game-button" type="button">Play again ↻</button>
+                </div>
+
+                <div id="word-game" class="game-panel" hidden>
+                    <h3>Odd One Out 🔤</h3>
+                    <p>Which one is a fruit?</p>
+
+                    <div class="word-options">
+                        <button class="word-option" type="button">🚗 Car</button>
+                        <button class="word-option" type="button">🍎 Apple</button>
+                        <button class="word-option" type="button">🪑 Chair</button>
+                    </div>
+
+                    <p id="word-status" aria-live="polite">Choose an answer!</p>
+                </div>
+            </section>
+            <section class="help-card" id="caregiver">
+                <span class="help-icon">🤝</span>
+                <div>
+                    <h2>Lost?</h2>
+                    <p>Say "Hey Siri" or "Hey Google" and ask to call your caregiver, or call 911.</p>
+                </div>
+                <button id="help-button" type="button">Get help</button>
+            </section>
+
+        </div>
+
+        <!-- people SCREEN -->
+        <div class="app-screen" id="screen-people" hidden>
+
+            <section class="screen-heading" id="people">
+                <p class="section-label">PEOPLE WHO MATTER</p>
+                <h1>My People 💙</h1>
+                <p>People I know and trust.</p>
+            </section>
+
+            <section class="placeholder-section">
+                <h2>My favorite people</h2>
+
+                <div class="contact-list">
+                    <article class="contact-card">
+                        <div class="contact-avatar">S</div>
+                        <div class="contact-info">
+                            <h3>Sarah</h3>
+                            <p>My family member</p>
+                        </div>
+                        <button class="contact-button" type="button" data-contact="Sarah">Contact</button>
+                    </article>
+
+                    <article class="contact-card">
+                        <div class="contact-avatar">M</div>
+                        <div class="contact-info">
+                            <h3>Michael</h3>
+                            <p>My husband</p>
+                        </div>
+                        <button class="contact-button" type="button" data-contact="Michael">Contact</button>
+                    </article>
+
+                    <article class="contact-card">
+                        <div class="contact-avatar">D</div>
+                        <div class="contact-info">
+                            <h3>Dr. Kim</h3>
+                            <p>My doctor</p>
+                        </div>
+                        <button class="contact-button" type="button" data-contact="Michael">Contact</button>
+                    </article>
+                </div>
+
+                <p class="contact-note">These are example contacts. Real contact details have not been added yet.</p>
+                <p id="contact-status" aria-live="polite"></p>
+    
+            </section>
+
+            <section class="help-card" id="caregiver">
+                <span class="help-icon">🤝</span>
+                <div>
+                    <h2>Lost?</h2>
+                    <p>Say "Hey Siri" or "Hey Google" and ask to call your caregiver, or call 911.</p>
+                </div>
+                <button id="help-button" type="button">Get help</button>
+            </section>
+
+        </div>
+
+
+        <!-- memories SCREEN -->
+        <div class="app-screen" id="screen-memories" hidden>
+
+            <section class="screen-heading" id="memories">
+                <p class="section-label"></p>
+                <h1>My Memories </h1>
+                <p>A place for people and moments that matter to me.</p>
+            </section>
+
+            <section class="placeholder-section">
+                <h2>Moments to remember</h2>
+
+                <div class="memory-gallery">
+                    <article class="memory-item">
+                        <div class="memory-photo">👧</div>
+                        <div class="memory-details">
+                            <h3>Sarah, My daughter</h3>
+                            <p>"Hi Mom, it's Sarah. I love you so much, and I'll see you at lunch"</p>
+                        </div>
+                    </article>
+
+                    <article class="memory-item">
+                        <div class="memory-photo">🏡</div>
+                        <div class="memory-details">
+                            <h3>Elm Street, Where you grew up</h3>
+                            <p>"You grew up in the red roofed house on Elm Street."</p>
+                        </div>
+                    </article>
+
+                    <article class="memory-item">
+                        <div class="memory-photo">💍</div>
+                        <div class="memory-details">
+                            <h3>Our wedding, June 23, 1975</h3>
+                            <p>"June twenty-third, nineteen seventy five. The day you got married. You wore your mother's gown."</p>
+                        </div>
+                    </article>
+
+                    <article class="memory-item">
+                        <div class="memory-photo">🐕</div>
+                        <div class="memory-details">
+                            <h3>Buddy, Our golden retriever</h3>
+                            <p>"This is Buddy, your golden retriever. He loved playing fetch with you in the backyard."</p>
+                        </div>
+                    </article>
+
+                    <article class="memory-item">
+                        <div class="memory-photo">🎣</div>
+                        <div class="memory-details">
+                            <h3>Lake trips, every summer with Micheal</h3>
+                            <p>"Every summer you took Michael to the lake. He still talks about the time you caught that huge bass."</p>
+                        </div>
+                    </article>
+
+                     <article class="memory-item">
+                        <div class="memory-photo">🎶</div>
+                        <div class="memory-details">
+                            <h3>Your Song, 'Dance the Night' by Dua Lipa</h3>
+                            <p>"Your song is Dance the Night by Dua Lipa. You love singing it along with the radio."</p>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="memory-note">These are example memories. Personal photos and captions can be added in a future version.</p>
+            </section>
+
+            <section class="help-card" id="caregiver">
+                <span class="help-icon">🤝</span>
+                <div>
+                    <h2>Lost?</h2>
+                    <p>Say "Hey Siri" or "Hey Google" and ask to call your caregiver, or call 911.</p>
+                </div>
+                <button id="help-button" type="button">Get help</button>
+            </section>
+
+        </div>
+
+        <!-- settings SCREEN -->
+
+        <div class="app-screen" id="screen-settings" hidden>
+
+            <section class="screen-heading" id="settings">
+                <p class="section-label">How are you feeling?</p>
+                <h1>Support & Settings 💙</h1>
+                <p>Make MyEcho feel personal and easy to use.</p>
+            </section>
+
+            <section class="help-card" id="caregiver">
+                <span class="help-icon">🤝</span>
+                <div>
+                    <h2>Lost?</h2>
+                    <p>Say "Hey Siri" or "Hey Google" and ask to call your caregiver, or call 911.</p>
+                </div>
+                <button id="help-button" type="button">Get help</button>
+            </section>
+
+            <section class="placeholder-section">
+                <h2>Personalize MyEcho</h2>
+                <p>What name should the app use when greeting you?</p>
+
+                <label for="greeting-name">Preferred name</label>
+                <div class="settings-row">
+                    <input type="text" id="greeting-name" placeholder="Enter a preferred name" maxlength="30">
+                    <button id="save-settings" class="game-button" type="button">Save</button>
+                </div>
+
+                <p id="settings-status" aria-live="polite">This setting is saved in this browser.</p>
+            </section>
+
+            <section class="placeholder-section text-size-setting">
+                <h2>Reading comfort</h2>
+                <p>Choose a text size that feels comfortable to read.</p>
+
+                <label>Text size</label>
+                <div class="text-size-buttons">
+                    <button id="smaller-text" type="button">A− Smaller</button>
+                    <button id="default-text" type="button">Default</button>
+                    <button id="larger-text" type="button">A+ Larger</button>
+                </div>
+
+                <p id="text-size-status" aria-live="polite">Standard text size</p>
+            </section>
+
+            <section class="location-card">
+                <h2>📍 Where am I?</h2>
+                <p>Save a familiar place as a reminder.</p>
+
+                <label for="familiar-place">My familiar place</label>
+                <div class="location-row">
+                    <input id="familiar-place" type="text" maxlength="80" placeholder="For example, I'm at home">
+                    <button id="save-place" class="game-button" type="button">Save place</button>
+                </div>
+
+                <p id="place-status" aria-live="polite">No place saved yet.</p>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- bottom NAVIGATION!! coding is so...fun... -->
+
+    <nav class="bottom-navigation" aria-label="Main navigation">
+        <button class="bottom-nav-item active" type="button" data-screen="home" aria-current="page">
+            <span class="bottom-nav-icon">⌂</span>
+            <span>Home</span>
+        </button>
+
+        <button class="bottom-nav-item" type="button" data-screen="today">
+            <span class="bottom-nav-icon">📅</span>
+            <span>My Day</span>
+        </button>
+
+        <button class="bottom-nav-item" type="button" data-screen="activities">
+            <span class="bottom-nav-icon">🧩</span>
+            <span>Activities</span>
+        </button>
+
+        <button class="bottom-nav-item" type="button" data-screen="people">
+            <span class="bottom-nav-icon">♡</span>
+            <span>People</span>
+        </button>
+
+        <button class="bottom-nav-item" type="button" data-screen="memories">
+            <span class="bottom-nav-icon">📸</span>
+            <span>Memories</span>
+        </button>
+
+        <button class="bottom-nav-item" type="button" data-screen="settings">
+            <span class="bottom-nav-icon">⚙</span>
+            <span>More</span>
+        </button>
+    </nav>
+
+    <footer>
+        <p>MyEcho 💙</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
