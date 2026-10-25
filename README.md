@@ -4,6 +4,7 @@
 > **Created by:** Aashi Verma and Hemaprabaa Rajakumar  
 
 A dementia-support web application designed around two perspectives: the person living with dementia and the caregiver supporting them.
+
 MyEcho explores how technology can make everyday routines easier to navigate, encourage independence, and help people stay connected with the people and activities that matter to them.
 
 ---
