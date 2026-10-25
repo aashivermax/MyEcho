@@ -40,9 +40,13 @@ MyEcho was built completely from scratch in **VS Code** without heavy frameworks
 ---
 ### Future Goals
 *Explore secure sharing between patient and caregiver views.
+
 *Expand activities and personalization options.
+
 *Improve accessibility and ease of navigation.
+
 *Gather feedback to guide future iterations.
+
 *Continue testing and refining the user experience.
 
 **Our Vision:** We hope to explore how small, thoughtful digital tools can make everyday experiences feel more manageable while supporting the connections that matter most.
